@@ -11,6 +11,7 @@ passport.use(new GoogleStrategy(
     async function(accessToken, refreshToken, profile, cb){
         try{
             let user = await User.findOne({ googleId: profile.id})
+
             if (user) return cb(null, user)
             user = await User.create({
                 name: profile.displayName,
@@ -18,6 +19,7 @@ passport.use(new GoogleStrategy(
                 email: profile.emails[0].value,
                 avatar: profile.photos[0].value
             })
+            
             return cb(null, user)
         } catch (err) {
             return cb(err)

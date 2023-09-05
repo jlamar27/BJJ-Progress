@@ -12,8 +12,10 @@ router.get('/', function(req, res, next) {
 router.get('/auth/google', passport.authenticate(
   'google',
   {
-    scope:['profile', 'email']
+    scope:['profile', 'email'],
+    prompt: "select_account"
   }
+  
   ))
   
   router.get('/oauth2callback', passport.authenticate(

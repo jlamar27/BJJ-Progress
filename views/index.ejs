@@ -9,7 +9,7 @@
     <% } else { %>
       <!-- If user is authenticated, automatically redirect to create profile -->
       <script>
-        window.location.href = "/profiles/new";
+        window.location.href = "/profiles/<%= user._id %>";
       </script>
     <% } %>
 

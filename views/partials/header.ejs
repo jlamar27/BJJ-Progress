@@ -14,11 +14,11 @@
       <% if (!user) { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <li><a href="/techniques">All Techniques</a></li>
-        <li><a href="/profiles/new">Create Profile</a></li> 
         <% } else { %>
-          <a href="/profiles">My Profile</a>
-        <li><a href="/techniques">All Techniques</a></li> 
-        <li><a href="/logout">Logout</a></li>
+          <a href="/profiles/<%= user._id %>">My Profile</a>
+          <li><a href="/techniques">All Techniques</a></li> 
+          <li><a href="/profiles/edit">EditProfile</a></li> 
+          <li><a href="/logout">Logout</a></li>
       <% } %>
     </ul>
 </nav>
