@@ -1,0 +1,40 @@
+
+<%- include('../partials/header') %>
+
+<h1>Create User Profile</h1>
+    
+<form action="/profiles" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+    </div>
+    
+    <div>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+    </div>
+    
+    <div>
+        <label for="beltRank">Belt Rank:</label>
+        <select id="beltRank" name="beltRank">
+            <option value="White">White</option>
+            <option value="Blue">Blue</option>
+            <option value="Purple">Purple</option>
+            <option value="Brown">Brown</option>
+            <option value="Black">Black</option>
+        </select>
+    </div>
+    
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+    </div>
+    
+   
+
+    <div>
+        <button type="submit">Create Profile</button>
+    </div>
+</form>
+
+<%- include('../partials/footer') %>

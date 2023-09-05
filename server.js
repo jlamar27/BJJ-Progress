@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var methodOverride = require('method-override')
 var session = require('express-session');
 var passport = require('passport')
 var methodOverride = require('method-override')
@@ -14,7 +13,8 @@ require('./config/passport')
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var profilesRouter = require('./routes/profiles');
+var techniquesRouter = require('./routes/techniques')
 
 var app = express();
 
@@ -38,7 +38,6 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use(passport.session());
 
 app.use(function (req, res, next) {
   res.locals.user = req.user;
@@ -47,7 +46,9 @@ app.use(function (req, res, next) {
 
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/profiles', profilesRouter);
+app.use('/techniques', techniquesRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

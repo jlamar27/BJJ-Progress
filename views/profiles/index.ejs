@@ -1,0 +1,17 @@
+<!-- views/profile.ejs -->
+<%- include('../partials/header') %>
+
+<h1>User Profile</h1>
+
+<div>
+  <p>Name: <%= userProfile.name %></p>
+  <p>Age: <%= userProfile.age %></p>
+</div>
+
+<div>
+  <p>Belt Rank: <%= userProfile.beltRank %></p>
+  <p>Email: <%= userProfile.email %></p>
+  <p>Avatar: <img src="<%= userProfile.avatar %>" alt="User Avatar"></p>
+</div>
+
+<%- include('../partials/footer') %>

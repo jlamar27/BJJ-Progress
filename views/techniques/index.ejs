@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+<h1>All Techniques</h1>
+
+<ul>
+  <% techniques.forEach(function(technique) { %>
+    <li><%= technique.name %></li>
+  <% }); %>
+</ul>
+<a href="techniques/new">Create New Technique</a> 
+
+<%- include('../partials/footer') %>
