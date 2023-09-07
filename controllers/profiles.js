@@ -134,7 +134,7 @@ async function removeUserTechnique (req, res) {
 
         await userProfile.save()
 
-        res.redirect('/profiles/${userId}')
+        res.redirect(`/profiles/${userId}`)
 
     } catch (error) {
         console.error(error);
