@@ -1,21 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const profilesCtrl = require('../controllers/profiles'); 
+const ensureLoggedIn = require('../config/ensureLoggedIn');
+
 
 // Route to render the "Create Profile" page
-router.get('/edit', profilesCtrl.renderEditProfilePage);
+router.get('/edit', ensureLoggedIn, profilesCtrl.renderEditProfilePage);
 
 // Route to handle profile edit
-router.post('/', profilesCtrl.editProfile);
+router.post('/', ensureLoggedIn, profilesCtrl.editProfile);
 
 // Route to display user profile
-router.get('/:userId', profilesCtrl.displayProfile);
+router.get('/:userId', ensureLoggedIn, profilesCtrl.displayProfile);
 
 // Route to display techniques for user to add
-router.get('/:userId/addTech', profilesCtrl.getTechniques);
+router.get('/:userId/addTech', ensureLoggedIn, profilesCtrl.getTechniques);
 
 // route to handle adding tech into user.techs
-router.post('/:userId', profilesCtrl.addTechniques);
+router.post('/:userId', ensureLoggedIn, profilesCtrl.addTechniques);
 
 
 

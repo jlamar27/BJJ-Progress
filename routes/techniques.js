@@ -11,7 +11,7 @@ router.get('/', techniquesCtrl.listTechniques);
 // router.get('/:techniqueId', techniquesCtrl.viewTechnique);
 
 // Route to add a new technique
-router.get('/new', techniquesCtrl.createTechnique)
+router.get('/new', ensureLoggedIn, techniquesCtrl.createTechnique)
 
 // // Route to edit an existing technique
 // router.get('/:techniqueId/edit', techniquesCtrl.editTechnique);
@@ -20,6 +20,6 @@ router.get('/new', techniquesCtrl.createTechnique)
 // router.put('/:techniqueId', techniquesCtrl.updateTechnique);
 
 // // Route to handle form submission for creating a new technique
-router.post('/', techniquesCtrl.handleTechniqueCreation);
+router.post('/', ensureLoggedIn, techniquesCtrl.handleTechniqueCreation);
 
 module.exports = router;

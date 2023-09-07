@@ -9,7 +9,7 @@ module.exports = {
     displayProfile,
     editProfile,
     getTechniques,
-    addTechniques
+    addEditTechniques
 }
 
 async function  renderEditProfilePage (req, res){
@@ -58,8 +58,8 @@ async function displayProfile(req, res) {
     try {
         // Get the user ID from the route parameter
         const userId = req.params.userId;
-        const userProfile = await User.findById(userId);
-        console.log(' this is what is in user.findbyid(userid)',userProfile)
+        const userProfile = await User.findById(userId).populate("techniques");
+       
 
         console.log('5475', userProfile.techniques)
         if (!userProfile) {
@@ -67,7 +67,7 @@ async function displayProfile(req, res) {
         }
 
         // Render the user profile view with the retrieved user data
-        res.render('profiles/', { userProfile });
+        res.render('profiles/', {userProfile});
     } catch (error) {
         // Handle any errors that occur during database interaction
         console.error(error);
@@ -88,7 +88,7 @@ async function getTechniques ( req, res) {
     }
 }
 
-async function addTechniques(req, res) {
+async function addEditTechniques(req, res) {
     try {
       const userId = req.params.userId;
       console.log('its here User ID:           ', userId)
