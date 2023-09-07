@@ -1,0 +1,19 @@
+<h1>Add Techniques</h1>
+
+<%
+  console.log(techniques);
+%>
+
+<% if (user) { %>
+<form action="/profiles/<%=user._id%>" method="POST">
+  <label for="technique">Select a Technique:</label>
+  <select id="technique" name="Technique">
+    <% techniques.forEach(function(technique) { %>
+      <option value="<%= technique._id %>"><%= technique.name %></option>
+    <% }); %>
+  </select>
+  <button type="submit">Add Technique</button>
+</form>
+<% } else { %>
+    <p>You must be logged in to add techniques.</p>
+  <% } %>

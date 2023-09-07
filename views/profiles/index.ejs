@@ -11,8 +11,18 @@
 <div>
   <p>Belt Rank: <%= userProfile.beltRank %></p>
   <p>Email: <%= userProfile.email %></p>
-  <p>Avatar: <img src="<%= userProfile.avatar %>" alt="User Avatar"></p>
+  <!-- <p>Avatar: <img src="<%= userProfile.avatar %>" alt="User Avatar"></p> -->
 </div>
+
+<div>
+  <p>Techniques:</p>
+  <ul>
+    <% userProfile.techniques.forEach(function(technique) { %>
+    <li><%= technique._id %></li>
+    <% }); %>
+  </ul>
+</div>
+<a href="<%=userProfile._id%>/addTech">add techniques</a>
 
 
 <%- include('../partials/footer') %>

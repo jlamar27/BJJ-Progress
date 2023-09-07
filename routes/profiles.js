@@ -1,8 +1,6 @@
-// routes/profiles.js
-
 const express = require('express');
 const router = express.Router();
-const profilesCtrl = require('../controllers/profiles'); // Import the controller
+const profilesCtrl = require('../controllers/profiles'); 
 
 // Route to render the "Create Profile" page
 router.get('/edit', profilesCtrl.renderEditProfilePage);
@@ -13,8 +11,13 @@ router.post('/', profilesCtrl.editProfile);
 // Route to display user profile
 router.get('/:userId', profilesCtrl.displayProfile);
 
-// // Route to edit user profile
-// router.patch('/:userId', profilesCtrl.editProfile)
+// Route to display techniques for user to add
+router.get('/:userId/addTech', profilesCtrl.getTechniques);
 
-// Add more routes and functionality as needed
+// route to handle adding tech into user.techs
+router.post('/:userId', profilesCtrl.addTechniques);
+
+
+
+
 module.exports = router;

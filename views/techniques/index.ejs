@@ -2,11 +2,26 @@
 
 <h1>All Techniques</h1>
 
-<ul>
-  <% techniques.forEach(function(technique) { %>
-    <li><%= technique.name %></li>
-  <% }); %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Is Submission</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% techniques.forEach(function(technique) { %>
+      <tr>
+        <td><%= technique.name %></td>
+        <td><%= technique.position %></td>
+        <td><%= technique.isSubmission %></td>
+        <td><%= technique.description %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
 <a href="techniques/new">Create New Technique</a> 
 
 <%- include('../partials/footer') %>

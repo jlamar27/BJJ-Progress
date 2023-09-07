@@ -18,9 +18,9 @@ const userSchema = new Schema({
   },
   email: String,
   avatar: String,
-  bjjTechniques: [{
+  techniques: [{
     type: Schema.Types.ObjectId,
-    ref: 'BjjTechnique' // Reference the BjjTechnique model
+    ref: 'Technique' // Reference the BjjTechnique model
   }]
 }, {
   timestamps: true

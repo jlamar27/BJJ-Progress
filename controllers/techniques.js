@@ -10,8 +10,10 @@ async function listTechniques(req, res) {
   try {
     // Fetch all techniques from the database (you may need to adjust this query)
     const techniques = await Technique.find({});
+    console.log('here12', techniques)
     // Render the techniques view and pass the techniques array to it
-    res.render("techniques", { title: "All Techniques", techniques });
+    // res.render('profiles/addTech', { data: techniques })
+    res.render('techniques/index', { title: "All Techniques", techniques });
   } catch (error) {
     // Handle errors, e.g., log the error and send an error response
     console.error(error);

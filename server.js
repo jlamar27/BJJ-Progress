@@ -6,6 +6,7 @@ var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport')
 var methodOverride = require('method-override')
+var bodyParser = require('body-parser');
 
 require('dotenv').config();
 require('./config/database');
@@ -28,6 +29,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.use(session({
   secret: process.env.SECRET, 

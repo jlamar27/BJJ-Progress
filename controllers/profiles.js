@@ -1,11 +1,15 @@
 const { default: mongoose } = require('mongoose');
 const User = require('../models/user');
+const Technique = require("../models/technique");
+
 
 
 module.exports = {
     renderEditProfilePage,
     displayProfile,
     editProfile,
+    getTechniques,
+    addTechniques
 }
 
 async function  renderEditProfilePage (req, res){
@@ -54,11 +58,11 @@ async function displayProfile(req, res) {
     try {
         // Get the user ID from the route parameter
         const userId = req.params.userId;
-        // Fetch the user profile data from the database based on the user ID
         const userProfile = await User.findById(userId);
+        console.log(' this is what is in user.findbyid(userid)',userProfile)
 
+        console.log('5475', userProfile.techniques)
         if (!userProfile) {
-            // Handle the case where the user profile doesn't exist
             return res.status(404).send('User profile not found');
         }
 
@@ -71,3 +75,43 @@ async function displayProfile(req, res) {
     }
 }
 
+async function getTechniques ( req, res) {
+    try{
+        const userId = req.params.userId;
+        const techniques = await Technique.find({});
+        
+        res.render('profiles/addTech', { techniques });
+    } catch (error) {
+        // Handle any errors that occur during database interaction
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+}
+
+async function addTechniques(req, res) {
+    try {
+      const userId = req.params.userId;
+      console.log('its here User ID:           ', userId)
+      console.log('req.body          ', req.body)
+
+      const selectedTechniques = req.body.Technique;
+      console.log('selectedTechniques:          ', selectedTechniques)
+    
+    
+      const userProfile = await User.findById(userId);
+      console.log('userprofile for add tech', userProfile)
+  
+      if (!userProfile) {
+        return res.status(404).send('User Profile not found');
+        }
+
+    // Assuming selectedTechniques is an array of objects, you can push them all at once
+    userProfile.techniques.push(selectedTechniques);
+
+    await userProfile.save();
+    res.redirect(`/profiles/${userProfile._id}`);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Errorssss');
+  }
+}
