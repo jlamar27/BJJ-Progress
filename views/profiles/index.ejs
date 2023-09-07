@@ -19,6 +19,7 @@
   <ul>
     <% userProfile.techniques.forEach(function(technique) { %>
     <li><%= technique.name %></li>
+    <a href="/profiles/<%= userProfile._id %>/removeTech/<%= technique._id %>">Remove</a>
     <% }); %>
   </ul>
 </div>

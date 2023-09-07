@@ -1,6 +1,7 @@
 const { default: mongoose } = require('mongoose');
 const User = require('../models/user');
 const Technique = require("../models/technique");
+const technique = require('../models/technique');
 
 
 
@@ -9,7 +10,8 @@ module.exports = {
     displayProfile,
     editProfile,
     getTechniques,
-    addEditTechniques
+    addTechniques,
+    removeUserTechnique,
 }
 
 async function  renderEditProfilePage (req, res){
@@ -60,8 +62,6 @@ async function displayProfile(req, res) {
         const userId = req.params.userId;
         const userProfile = await User.findById(userId).populate("techniques");
        
-
-        console.log('5475', userProfile.techniques)
         if (!userProfile) {
             return res.status(404).send('User profile not found');
         }
@@ -88,7 +88,7 @@ async function getTechniques ( req, res) {
     }
 }
 
-async function addEditTechniques(req, res) {
+async function addTechniques(req, res) {
     try {
       const userId = req.params.userId;
       console.log('its here User ID:           ', userId)
@@ -114,4 +114,30 @@ async function addEditTechniques(req, res) {
     console.error(error);
     res.status(500).send('Internal Server Errorssss');
   }
+}
+
+async function removeUserTechnique (req, res) {
+    try {
+        const userId = req.params.userId;
+        console.log('lolol',userId)
+        const techniqueId = req.params.techniqueId;
+        console.log('techid', techniqueId)
+        const userProfile = await User.findById(userId)
+
+        const techniqueIndex = userProfile.techniques.findIndex(
+            (technique) => technique._id.toString() === techniqueId
+          );
+          
+
+
+        userProfile.techniques.splice(techniqueIndex,1)
+
+        await userProfile.save()
+
+        res.redirect('/profiles/${userId}')
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error1');
+      }
 }

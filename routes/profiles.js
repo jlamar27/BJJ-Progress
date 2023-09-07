@@ -17,7 +17,10 @@ router.get('/:userId', ensureLoggedIn, profilesCtrl.displayProfile);
 router.get('/:userId/addTech', ensureLoggedIn, profilesCtrl.getTechniques);
 
 // route to handle adding tech into user.techs
-router.post('/:userId', ensureLoggedIn, profilesCtrl.addEditTechniques);
+router.post('/:userId', ensureLoggedIn, profilesCtrl.addTechniques);
+
+// technique removal from users technique 
+router.get('/:userId/removeTech/:techniqueId', ensureLoggedIn, profilesCtrl.removeUserTechnique)
 
 
 
