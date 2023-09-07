@@ -15,7 +15,21 @@ module.exports = {
 }
 
 async function  renderEditProfilePage (req, res){
-    res.render('profiles/edit')
+    try{
+        const userId = req.user.id
+        console.log('userId!!!!', userId)
+        const userProfile = await User.findById(userId);
+        console.log('userProfile!!!!!', userProfile)
+
+        if (!userProfile){
+            return res.status(404).send('User Profile not found')
+        }
+
+        res.render('profiles/edit', { userProfile })
+    } catch (error) {
+        console.error(error)
+        res.status(500).send('Internal Server Error')
+    }
 }
 
 async function editProfile(req, res) {

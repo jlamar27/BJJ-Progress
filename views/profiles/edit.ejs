@@ -6,35 +6,34 @@
 <form action="/profiles" method="POST">
     <div>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" value="<%= userProfile.name %>">
     </div>
     
     <div>
         <label for="age">Age:</label>
-        <input type="number" id="age" name="age">
+        <input type="number" id="age" name="age" value="<%= userProfile.age %>">
     </div>
     
     <div>
         <label for="beltRank">Belt Rank:</label>
         <select id="beltRank" name="beltRank">
-            <option value="White">White</option>
-            <option value="Blue">Blue</option>
-            <option value="Purple">Purple</option>
-            <option value="Brown">Brown</option>
-            <option value="Black">Black</option>
+            <option value="White" <%= userProfile.beltRank === 'White' ? 'selected' : '' %>>White</option>
+            <option value="Blue" <%= userProfile.beltRank === 'Blue' ? 'selected' : '' %>>Blue</option>
+            <option value="Purple" <%= userProfile.beltRank === 'Purple' ? 'selected' : '' %>>Purple</option>
+            <option value="Brown" <%= userProfile.beltRank === 'Brown' ? 'selected' : '' %>>Brown</option>
+            <option value="Black" <%= userProfile.beltRank === 'Black' ? 'selected' : '' %>>Black</option>
         </select>
     </div>
     
     <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" value="<%= userProfile.email %>">
     </div>
-    
-   
 
     <div>
         <button type="submit">Edit Profile</button>
     </div>
 </form>
+
 
 <%- include('../partials/footer') %>
