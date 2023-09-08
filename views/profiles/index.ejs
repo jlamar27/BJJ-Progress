@@ -16,9 +16,16 @@
 
 
 <div>
-  <p>Training session</p>
-  
-  <a href="/profiles/<%= userProfile._id %>/trainingSession">View Training Session</a>
+  <p>Training Sessions:</p>
+  <ul>
+    <% trainingSessions.forEach(function(session) { %>
+    <li>
+      <a href="/profiles/<%= userProfile._id %>/sessions/<%= session._id %>">
+        Date: <%= session.date %>
+      </a>
+    </li>
+    <% }); %>
+  </ul>
 </div>
 
 <!-- make tech a popup modal -->

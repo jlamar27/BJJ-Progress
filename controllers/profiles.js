@@ -2,6 +2,7 @@ const { default: mongoose } = require('mongoose');
 const User = require('../models/user');
 const Technique = require("../models/technique");
 const TrainingSession = require('../models/trainingSession');
+const user = require('../models/user');
 
 
 
@@ -15,6 +16,7 @@ module.exports = {
     removeUserTechnique,
     renderTrainingSessionPage,
     createTrainingSession,
+    displayTrainingSession,
 }
 
 async function  renderEditProfilePage (req, res){
@@ -83,10 +85,15 @@ async function displayProfile(req, res) {
             return res.status(404).send('User profile not found');
         }
 
-        // Render the user profile view with the retrieved user data
-        res.render('profiles/', {userProfile});
+        const trainingSessions = await TrainingSession.find({ _id: { $in: userProfile.trainingSessions } });
+
+
+        res.render('profiles/', {
+            userProfile,
+            trainingSessions
+        });
+
     } catch (error) {
-        // Handle any errors that occur during database interaction
         console.error(error);
         res.status(500).send('Internal Server Error');
     }
@@ -155,7 +162,7 @@ async function removeUserTechnique (req, res) {
 
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error1');
+        res.status(500).send('Internal Server Error');
       }
 }
 
@@ -173,6 +180,7 @@ async function renderTrainingSessionPage (req, res){
         })
     } catch (error) {
         console.error(error)
+        res.status(500).send('Internal Server Error')
     }
 }
 
@@ -204,5 +212,33 @@ async function createTrainingSession(req, res) {
         console.error(error)
         res.status(500).send('Internal Server Error');
 
+    }
+}
+
+
+async function displayTrainingSession (req,res) {
+    try{
+        const userId = req.params.userId
+        const sessionId = req.params.sessionId
+
+        const userProfile = await User.findById(userId)
+        if(!userProfile){
+            return res.status(404).send('User Profile no5 found')
+        }
+
+        const trainingSession = await TrainingSession.findById(sessionId)
+        if (!trainingSession){
+            return res.status(404).send('Training Session not found')
+        }
+
+        res.render('profiles/trainingSession', {
+            userProfile, 
+            trainingSession
+        })
+
+
+    } catch (error) {
+        console.error(error)
+        res.status(500).send('Internal Server Error')
     }
 }

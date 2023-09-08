@@ -30,7 +30,7 @@ router.post('/:userId/createTrainingSession', ensureLoggedIn, profilesCtrl.creat
 
 
 // // Route to display a specific training session
-// router.get('/:userId/sessions/:sessionId', ensureLoggedIn, profilesCtrl.displayTrainingSession);
+router.get('/:userId/sessions/:sessionId', ensureLoggedIn, profilesCtrl.displayTrainingSession);
 
 // // Route to add techniques used in a training session
 // router.post('/:userId/sessions/:sessionId/addTechniques', ensureLoggedIn, profilesCtrl.addTechniquesToSession);
