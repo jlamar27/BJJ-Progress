@@ -1,0 +1,261 @@
+[
+    {
+      "name": "Armbar",
+      "position": "Guard",
+      "isSubmission": true,
+      "description": "A joint lock submission on the opponent's arm."
+    },
+    {
+      "name": "Triangle Choke",
+      "position": "Guard",
+      "isSubmission": true,
+      "description": "A chokehold using the legs to form a triangle."
+    },
+    {
+      "name": "Kimura Lock",
+      "position": "Side Control",
+      "isSubmission": true,
+      "description": "A joint lock submission targeting the shoulder."
+    },
+    {
+      "name": "Rear Naked Choke",
+      "position": "Back Control",
+      "isSubmission": true,
+      "description": "A chokehold from the opponent's back."
+    },
+    {
+      "name": "Guillotine Choke",
+      "position": "Guard",
+      "isSubmission": true,
+      "description": "A chokehold using the arms and neck."
+    },
+    {
+      "name": "Omoplata",
+      "position": "Guard",
+      "isSubmission": true,
+      "description": "A shoulder lock submission from the guard position."
+    },
+    {
+      "name": "Ankle Pick",
+      "position": "Standing",
+      "isSubmission": false,
+      "description": "A takedown technique targeting the opponent's ankle."
+    },
+    {
+      "name": "Bow and Arrow Choke",
+      "position": "Back Control",
+      "isSubmission": true,
+      "description": "A chokehold using the opponent's lapel and legs."
+    },
+    {
+      "name": "Kesa Gatame",
+      "position": "Side Control",
+      "isSubmission": false,
+      "description": "A control position used in judo and jiu-jitsu."
+    },
+    {
+      "name": "Arm Drag",
+      "position": "Standing",
+      "isSubmission": false,
+      "description": "A technique to unbalance and control the opponent."
+    },
+    {
+      "name": "Loop Choke",
+      "position": "Guard",
+      "isSubmission": true,
+      "description": "A chokehold using the opponent's lapel."
+    },
+    {
+      "name": "De La Riva Guard",
+      "position": "Guard",
+      "isSubmission": false,
+      "description": "A guard position used in jiu-jitsu for sweeps and attacks."
+    },
+    {
+      "name": "Fireman's Carry",
+      "position": "Standing",
+      "isSubmission": false,
+      "description": "A takedown technique to lift and throw the opponent."
+    },
+    {
+      "name": "Scissor Sweep",
+      "position": "Guard",
+      "isSubmission": false,
+      "description": "A sweep technique using scissoring leg motion."
+    },
+    {
+      "name": "Bullfighter Pass",
+      "position": "Guard",
+      "isSubmission": false,
+      "description": "A guard passing technique used to go around the opponent's legs."
+    },
+    {
+      "name": "Peruvian Necktie",
+      "position": "Guard",
+      "isSubmission": true,
+      "description": "A chokehold using the opponent's arms and neck."
+    },
+    {
+      "name": "Head and Arm Triangle",
+      "position": "Mount",
+      "isSubmission": true,
+      "description": "A triangle choke from the mounted position."
+    },
+    {
+      "name": "Americana Lock",
+      "position": "Side Control",
+      "isSubmission": true,
+      "description": "A joint lock submission targeting the opponent's shoulder."
+    },
+    {
+      "name": "Double Leg Takedown",
+      "position": "Standing",
+      "isSubmission": false,
+      "description": "A powerful takedown technique to lift and drive the opponent to the ground."
+    },
+    {
+      "name": "Spider Guard",
+      "position": "Guard",
+      "isSubmission": false,
+      "description": "A guard position used for control and sweeps."
+    },
+    {
+      "name": "Bow and Arrow Sweep",
+      "position": "Guard",
+      "isSubmission": false,
+      "description": "A sweep technique from the guard position."
+    },
+    {
+      "name": "Anaconda Choke",
+      "position": "Front Headlock",
+      "isSubmission": true,
+      "description": "A chokehold using the arms and neck."
+    },
+    {
+      "name": "Butterfly Guard",
+      "position": "Guard",
+      "isSubmission": false,
+      "description": "A guard position for sweeps and control."
+    },
+    {
+      "name": "North-South Choke",
+      "position": "North-South",
+      "isSubmission": true,
+      "description": "A chokehold from the North-South position."
+    },
+    {
+      "name": "Berimbolo",
+      "position": "Guard",
+      "isSubmission": false,
+      "description": "A dynamic guard sweeping technique."
+    },
+    {
+      "name": "Monoplata",
+      "position": "Side Control",
+      "isSubmission": true,
+      "description": "A shoulder lock submission."
+    },
+    {
+      "name": "Twister",
+      "position": "Back Control",
+      "isSubmission": true,
+      "description": "A spine lock submission from the back control position."
+    },
+    {
+      "name": "Donkey Guard",
+      "position": "Guard",
+      "isSubmission": false,
+      "description": "A playful guard position for sweeps and escapes."
+    },
+    {
+      "name": "Wrist Lock",
+      "position": "Various",
+      "isSubmission": true,
+      "description": "A joint lock submission on the opponent's wrist."
+    },
+    {
+      "name": "Knee Slice Pass",
+      "position": "Guard Passing",
+      "isSubmission": false,
+      "description": "A guard passing technique using the knee to slice through the legs."
+    },
+    {
+      "name": "D'Arce Choke",
+      "position": "Front Headlock",
+      "isSubmission": true,
+      "description": "A chokehold using the arms and neck."
+    },
+    {
+      "name": "X-Guard",
+      "position": "Guard",
+      "isSubmission": false,
+      "description": "A guard position known for sweeps and control."
+    },
+    {
+      "name": "Keylock",
+      "position": "Various",
+      "isSubmission": true,
+      "description": "A joint lock submission targeting the opponent's shoulder."
+    },
+    {
+      "name": "Ezekiel Choke",
+      "position": "Mount",
+      "isSubmission": true,
+      "description": "A chokehold using the sleeve and collar."
+    },
+    {
+      "name": "Bicep Slicer",
+      "position": "Various",
+      "isSubmission": true,
+      "description": "A joint lock submission on the opponent's bicep."
+    },
+    {
+      "name": "Foot Lock",
+      "position": "Various",
+      "isSubmission": true,
+      "description": "A joint lock submission targeting the opponent's foot."
+    },
+    {
+      "name": "Toe Hold",
+      "position": "Various",
+      "isSubmission": true,
+      "description": "A joint lock submission on the opponent's toes."
+    },
+    {
+      "name": "Spinning Armbar",
+      "position": "Various",
+      "isSubmission": true,
+      "description": "An armbar submission with a spinning motion."
+    },
+    {
+      "name": "Clock Choke",
+      "position": "Guard",
+      "isSubmission": true,
+      "description": "A chokehold using the opponent's lapel."
+    },
+    {
+      "name": "Kneebar",
+      "position": "Various",
+      "isSubmission": true,
+      "description": "A leg lock submission targeting the opponent's knee."
+    },
+    {
+      "name": "Z-Guard",
+      "position": "Guard",
+      "isSubmission": false,
+      "description": "A guard position known for sweeps and control."
+    },
+    {
+      "name": "Crucifix",
+      "position": "Various",
+      "isSubmission": true,
+      "description": "A dominant control position with various submission options."
+    },
+    {
+      "name": "Inverted Triangle Choke",
+    "position": "Guard",
+    "isSubmission": true,
+    "description": "A triangle choke variation with an inverted position."
+    }
+  ]
+  
