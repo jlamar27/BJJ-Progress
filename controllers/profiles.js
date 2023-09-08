@@ -1,7 +1,8 @@
 const { default: mongoose } = require('mongoose');
 const User = require('../models/user');
 const Technique = require("../models/technique");
-const technique = require('../models/technique');
+const TrainingSession = require('../models/trainingSession');
+
 
 
 
@@ -12,6 +13,8 @@ module.exports = {
     getTechniques,
     addTechniques,
     removeUserTechnique,
+    renderTrainingSessionPage,
+    createTrainingSession,
 }
 
 async function  renderEditProfilePage (req, res){
@@ -154,4 +157,52 @@ async function removeUserTechnique (req, res) {
         console.error(error);
         res.status(500).send('Internal Server Error1');
       }
+}
+
+async function renderTrainingSessionPage (req, res){
+    try{
+        const userId = req.params.userId
+        const userProfile = await User.findById(userId).populate('techniques')
+
+        if (!userProfile) {
+            return res.status(404).send('User profile not found')
+        }
+
+        res.render('profiles/trainingSession', {
+            userProfile,
+        })
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+async function createTrainingSession(req, res) {
+    try{
+        const { date, techniquesUsed, journal}  = req.body
+
+        const userId = req.params.userId
+
+        const trainingSession = new TrainingSession({
+            date,
+            techniquesUsed,
+            journal,
+        })
+
+        await trainingSession.save()
+        console.log(trainingSession)
+    
+        const userProfile = await User.findById(userId)
+
+        userProfile.trainingSessions.push(trainingSession);
+
+        await userProfile.save();
+
+        res.redirect(`/profiles/${userId}`);
+
+
+    } catch (error) {
+        console.error(error)
+        res.status(500).send('Internal Server Error');
+
+    }
 }

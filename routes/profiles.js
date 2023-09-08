@@ -22,6 +22,18 @@ router.post('/:userId', ensureLoggedIn, profilesCtrl.addTechniques);
 // technique removal from users technique 
 router.get('/:userId/removeTech/:techniqueId', ensureLoggedIn, profilesCtrl.removeUserTechnique)
 
+// Route to create a new training session
+router.get('/:userId/trainingSession', ensureLoggedIn, profilesCtrl.renderTrainingSessionPage);
+
+// Route to handle creating training session for user
+router.post('/:userId/createTrainingSession', ensureLoggedIn, profilesCtrl.createTrainingSession);
+
+
+// // Route to display a specific training session
+// router.get('/:userId/sessions/:sessionId', ensureLoggedIn, profilesCtrl.displayTrainingSession);
+
+// // Route to add techniques used in a training session
+// router.post('/:userId/sessions/:sessionId/addTechniques', ensureLoggedIn, profilesCtrl.addTechniquesToSession);
 
 
 

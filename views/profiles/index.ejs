@@ -14,6 +14,14 @@
   <!-- <p>Avatar: <img src="<%= userProfile.avatar %>" alt="User Avatar"></p> -->
 </div>
 
+
+<div>
+  <p>Training session</p>
+  
+  <a href="/profiles/<%= userProfile._id %>/trainingSession">View Training Session</a>
+</div>
+
+<!-- make tech a popup modal -->
 <div>
   <p>Techniques:</p>
   <ul>
@@ -24,6 +32,8 @@
   </ul>
 </div>
 <a href="<%=userProfile._id%>/addTech">add techniques</a>
+
+
 
 
 <%- include('../partials/footer') %>

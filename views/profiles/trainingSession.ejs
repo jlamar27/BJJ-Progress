@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h1>Create Training Session</h1>
+
+<form action="/profiles/<%= userProfile._id %>/createTrainingSession" method="POST">
+  <div>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+  </div>
+
+  <div>
+    <label for="techniquesUsed">Techniques Used:</label>
+    <select id="techniquesUsed" name="techniquesUsed" multiple>
+      <% userProfile.techniques.forEach(function(technique) { %>
+        <option value="<%= technique._id %>"><%= technique.name %></option>
+      <% }); %>
+    </select>
+  </div>
+
+  <div>
+    <label for="journal">Journal:</label>
+    <textarea id="journal" name="journal" rows="4" cols="50"></textarea>
+  </div>
+  <div>
+    <button type="submit">Create Training Session</button>
+  </div>
+</form>
+
+<a href="/profiles/<%= userProfile._id %>">Back to Profile</a>
+
+<%- include('../partials/footer') %>

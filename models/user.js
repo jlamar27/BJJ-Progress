@@ -4,28 +4,30 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   name: {
     type: String,
-    required: false
+    required: false,
   },
   age: Number,
   beltRank: {
     type: String,
-    enum: ['White', 'Blue', 'Purple', 'Brown', 'Black'], 
-    required: false
+    enum: ['White', 'Blue', 'Purple', 'Brown', 'Black'],
+    required: false,
   },
   googleId: {
     type: String,
-    required: true
+    required: true,
   },
   email: String,
   avatar: String,
   techniques: [{
     type: Schema.Types.ObjectId,
-    ref: 'Technique' // Reference the BjjTechnique model
-  }]
+    ref: 'Technique', // Reference the BjjTechnique model
+  }],
+  trainingSessions: [{
+    type: Schema.Types.ObjectId,
+    ref: 'TrainingSession', // Reference the TrainingSession model
+  }],
 }, {
-  timestamps: true
+  timestamps: true,
 });
 
 module.exports = mongoose.model('User', userSchema);
-
-
