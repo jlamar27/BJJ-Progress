@@ -2,6 +2,21 @@
 
 <h1>All Techniques</h1>
 
+<form action="/techniques" method="get">
+  <label for="isSubmission">Filter by Submission:</label>
+  <select name="isSubmission" id="isSubmission">
+    <option value="">All Techniques</option>
+    <option value="true" <% if (selectedIsSubmission === 'true') { %>selected<% } %>>Submission</option>
+    <option value="false" <% if (selectedIsSubmission === 'false') { %>selected<% } %>>Non-Submission</option>
+  </select>
+
+  <button type="submit">Apply Filters</button>
+  <a href="/techniques">Reset</a> 
+</form>
+
+
+
+
 <table>
   <thead>
     <tr>
@@ -20,8 +35,4 @@
         <td><%= technique.description %></td>
       </tr>
     <% }); %>
-  </tbody>
-</table>
-<a href="techniques/new">Create New Technique</a> 
-
-<%- include('../partials/footer') %>
+    

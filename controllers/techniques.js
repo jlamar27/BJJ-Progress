@@ -8,18 +8,27 @@ module.exports = {
 
 async function listTechniques(req, res) {
   try {
-    // Fetch all techniques from the database (you may need to adjust this query)
-    const techniques = await Technique.find({});
-    console.log('here12', techniques)
-    // Render the techniques view and pass the techniques array to it
-    // res.render('profiles/addTech', { data: techniques })
-    res.render('techniques/index', { title: "All Techniques", techniques });
+    const { isSubmission } = req.query;
+    let query = {};
+
+    if (isSubmission !== undefined) {
+      query.isSubmission = isSubmission === 'true';
+    }
+
+    const techniques = await Technique.find(query);
+    res.render('techniques/index', {
+      title: "All Techniques",
+      techniques,
+      selectedIsSubmission: isSubmission || '', 
+    });
+
   } catch (error) {
-    // Handle errors, e.g., log the error and send an error response
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
 }
+
+
 
 async function handleTechniqueCreation(req, res) {
   try {

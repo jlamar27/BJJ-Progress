@@ -22,4 +22,6 @@ router.get('/new', ensureLoggedIn, techniquesCtrl.createTechnique)
 // // Route to handle form submission for creating a new technique
 router.post('/', ensureLoggedIn, techniquesCtrl.handleTechniqueCreation);
 
+
+
 module.exports = router;
