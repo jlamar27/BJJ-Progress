@@ -1,47 +1,46 @@
 <%- include('./partials/header') %>
 
-<h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<div class="landing">
+  <h1 class="landing-title"><%= title %></h1>
+  <p class="landing-description">Welcome to <%= title %></p>
 
-    <% if (!user) { %>
-      <!-- If user is not authenticated, display a link to login -->
-      <a href="/auth/google">Create Your Profile</a>
-    <% } else { %>
-      <!-- If user is authenticated, automatically redirect to create profile -->
-      <script>
-        window.location.href = "/profiles/<%= user._id %>";
-      </script>
-    <% } %>
+  <% if (!user) { %>
+    <!-- If the user is not authenticated, display a link to log in -->
+    <a href="/auth/google" class="landing-btn">Create Your Profile</a>
+  <% } else { %>
+    <!-- If the user is authenticated, automatically redirect to create profile -->
+    <script>
+      window.location.href = "/profiles/<%= user._id %>";
+    </script>
+  <% } %>
+</div>
+
+<div class="landing-content">
+  <h1 class="content-heading">Welcome to BJJ Tracker: Your Ultimate Brazilian Jiu-Jitsu Training Companion</h1>
+
+  <p class="content-paragraph">Are you passionate about Brazilian Jiu-Jitsu? Are you ready to take your BJJ journey to the next level? Look no further! BJJ Tracker is here to empower you on your path to mastery.</p>
+
+  <h2 class="content-subheading">Discover Your BJJ Potential</h2>
+
+  <p class="content-paragraph">BJJ Tracker is more than just a training website; it's your personalized BJJ coach, training partner, and progress tracker, all rolled into one. Whether you're a white belt just starting or a black belt aiming for perfection, our platform caters to practitioners of all levels.</p>
+
+  <h2 class="content-subheading">Track Your Progress</h2>
+
+  <p class="content-paragraph">BJJ Tracker's advanced tracking tools allow you to monitor your training sessions, sparring matches, and competition results. Analyze your performance, identify areas for improvement, and set clear goals to reach new heights in your BJJ journey.</p>
+
+  <h2 class="content-subheading">Connect with the BJJ Community</h2>
+
+  <p class="content-paragraph">Join a vibrant community of BJJ enthusiasts from around the world. Share your experiences, ask questions, and learn from others who share your passion for Brazilian Jiu-Jitsu. Connect with training partners, find local gyms, and discover BJJ events and tournaments in your area.</p>
+
+  <h2 class="content-subheading">Stay Informed and Inspired</h2>
+
+  <p class="content-paragraph">Stay up-to-date with the latest news, articles, and interviews featuring BJJ experts and champions. Gain insights into their training routines, mindset, and strategies for success. Get inspired to push your limits and achieve greatness on the mats.</p>
+
+  <h2 class="content-subheading">Your BJJ Journey Starts Here</h2>
+
+  <p class="content-paragraph">Whether you're looking to earn your first stripe or reach the pinnacle of BJJ excellence, BJJ Tracker is your dedicated partner on this incredible journey. Take the next step toward becoming a Brazilian Jiu-Jitsu master today!</p>
+
+  <p class="content-paragraph">Join us at BJJ Tracker, where every roll is a chance to learn, grow, and dominate on the mats. Start your BJJ adventure now and experience the transformative power of Brazilian Jiu-Jitsu!</p>
+</div>
 
 <%- include('./partials/footer') %>
-
-
-<!-- **Welcome to BJJ Tracker: Your Ultimate Brazilian Jiu-Jitsu Training Companion**
-
-Are you passionate about Brazilian Jiu-Jitsu? Are you ready to take your BJJ journey to the next level? Look no further! BJJ Tracker is here to empower you on your path to mastery.
-
-**Discover Your BJJ Potential**
-
-BJJ Tracker is more than just a training website; it's your personalized BJJ coach, training partner, and progress tracker, all rolled into one. Whether you're a white belt just starting or a black belt aiming for perfection, our platform caters to practitioners of all levels.
-
-**Train Smarter, Not Harder**
-
-Unlock the secrets to improving your BJJ skills with our comprehensive training programs, created by world-class instructors and BJJ champions. Our step-by-step tutorials cover everything from fundamental techniques to advanced strategies, ensuring that you build a strong foundation and continue to refine your skills.
-
-**Track Your Progress**
-
-BJJ Tracker's advanced tracking tools allow you to monitor your training sessions, sparring matches, and competition results. Analyze your performance, identify areas for improvement, and set clear goals to reach new heights in your BJJ journey.
-
-**Connect with the BJJ Community**
-
-Join a vibrant community of BJJ enthusiasts from around the world. Share your experiences, ask questions, and learn from others who share your passion for Brazilian Jiu-Jitsu. Connect with training partners, find local gyms, and discover BJJ events and tournaments in your area.
-
-**Stay Informed and Inspired**
-
-Stay up-to-date with the latest news, articles, and interviews featuring BJJ experts and champions. Gain insights into their training routines, mindset, and strategies for success. Get inspired to push your limits and achieve greatness on the mats.
-
-**Your BJJ Journey Starts Here**
-
-Whether you're looking to earn your first stripe or reach the pinnacle of BJJ excellence, BJJ Tracker is your dedicated partner on this incredible journey. Take the next step toward becoming a Brazilian Jiu-Jitsu master today!
-
-Join us at BJJ Tracker, where every roll is a chance to learn, grow, and dominate on the mats. Start your BJJ adventure now and experience the transformative power of Brazilian Jiu-Jitsu! -->

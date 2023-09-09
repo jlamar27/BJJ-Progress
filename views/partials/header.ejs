@@ -7,20 +7,21 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title><%= 'BJJ Progress' %></title>
 </head>
-<nav>
-  <a href="https://www.antpace.com/blog/wp-content/uploads/2018/08/tile.png">make logo
+<body> <!-- Added the <body> element -->
+  <nav>
+    <a href="https://www.antpace.com/blog/wp-content/uploads/2018/08/tile.png">make logo</a>
     <ul>
       <li><a href="/">Home</a></li>
       <% if (!user) { %>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <li><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
         <li><a href="/techniques">All Techniques</a></li>
-        <% } else { %>
-          <a href="/profiles/<%= user._id %>">My Profile</a>
-          <li><a href="/techniques">All Techniques</a></li> 
-          <li><a href="/profiles/edit">EditProfile</a></li> 
-          <li><a href="/logout">Logout</a></li>
+      <% } else { %>
+        <li><a href="/profiles/<%= user._id %>">My Profile</a></li>
+        <li><a href="/techniques">All Techniques</a></li> 
+        <li><a href="/profiles/edit">EditProfile</a></li> 
+        <li><a href="/logout">Logout</a></li>
       <% } %>
     </ul>
-</nav>
-</a>
-
+  </nav>
+</body> <!-- Closed the <body> element -->
+</html>

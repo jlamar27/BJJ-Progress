@@ -106,7 +106,7 @@ async function getTechniques ( req, res) {
         
         res.render('profiles/addTech', { techniques });
     } catch (error) {
-        // Handle any errors that occur during database interaction
+        
         console.error(error);
         res.status(500).send('Internal Server Error');
     }
@@ -115,8 +115,8 @@ async function getTechniques ( req, res) {
 async function addTechniques(req, res) {
     try {
       const userId = req.params.userId;
-      console.log('its here User ID:           ', userId)
-      console.log('req.body          ', req.body)
+      console.log('its here User ID:', userId)
+      console.log('req.body', req.body)
 
       const selectedTechniques = req.body.Technique;
       console.log('selectedTechniques:          ', selectedTechniques)

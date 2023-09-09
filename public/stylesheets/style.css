@@ -1,24 +1,141 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* Reset some default browser styles */
+body, h1, p, ul, li {
+  margin: 0;
+  padding: 0;
 }
 
-a {
-  color: #00B7FF;
+/* Apply styles to the navbar */
+nav {
+  background-color: #333; /* Dark background color for the navbar */
+  color: #fff; /* Text color for navbar links */
+  display: flex; /* Use Flexbox to control the layout */
+  justify-content: space-between; /* Push items to both ends of the navbar */
+  align-items: center; /* Vertically center items */
+  padding: 10px 20px; /* Add padding to the top and bottom of the navbar */
 }
 
+nav a {
+  color: #fff; /* Text color for navbar links */
+  text-decoration: none; /* Remove underlines from links */
+  margin-right: 20px; /* Add some space between navbar items on the left */
+}
 
-.login {
+nav a.login {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 34px;
+  color: #00B7FF; /* Button text color */
+  text-decoration: none;
+  margin-left: auto; /* Push the "Login" link to the right */
 }
 
-.login img {
-  height: 30px;
+nav a.login img {
+  height: 20px; /* Adjust the height of the login icon */
+  margin-left: 5px; /* Add some space between text and icon */
 }
 
+/* Apply styles to the logo */
+.landing-title {
+  color: #fff; /* Text color for the title */
+  font-size: 2.5rem; /* Adjust the font size */
+  margin-bottom: 10px; /* Add some space between the title and description */
+}
 
-nav { display: flex; justify-content: space-between; }
+.landing-description {
+  color: #fff; /* Text color for the description */
+  font-size: 1.5rem; /* Adjust the font size */
+  margin-bottom: 20px; /* Add some space between the description and button */
+}
 
+/* Style the "Create Your Profile" button */
+.landing-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00B7FF; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth hover effect */
+  font-size: 1.2rem; /* Adjust the font size */
+}
+
+.landing-btn:hover {
+  background-color: #0097E0; /* Change color on hover */
+}
+
+/* Apply styles to the content */
+.content-heading {
+  color: #0B0B0C; /* Text color for headings */
+  font-size: 2rem; /* Adjust the font size */
+  margin-top: 20px; /* Add space above headings */
+}
+
+.content-paragraph {
+  color: #333; /* Text color for paragraphs */
+  font-size: 1.2rem; /* Adjust the font size */
+  margin-bottom: 20px; /* Add space below paragraphs */
+}
+
+.content-subheading {
+  color: #0B0B0C; /* Text color for subheadings */
+  font-size: 1.8rem; /* Adjust the font size */
+  margin-top: 30px; /* Add space above subheadings */
+  margin-bottom: 10px; /* Add space below subheadings */
+}
+/* Add CSS styles for the technique table */
+.technique-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.technique-table th,
+.technique-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.technique-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+.remove-link {
+  color: #e74c3c;
+  text-decoration: none;
+}
+
+.remove-link:hover {
+  text-decoration: underline;
+}
+/* Add CSS styles for the training session table */
+.session-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.session-table th,
+.session-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.session-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+.session-table td a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.session-table td a:hover {
+  text-decoration: underline;
+}
