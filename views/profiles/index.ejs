@@ -1,38 +1,40 @@
-<!-- views/profile.ejs -->
 <%- include('../partials/header') %>
 
 <div class="user-profile">
-  <h1 class="profile-title">User Profile</h1>
-
-  <div class="profile-info">
-    <p class="profile-detail"><span class="detail-label">Name:</span> <%= userProfile.name %></p>
-    <p class="profile-detail"><span class="detail-label">Age:</span> <%= userProfile.age %></p>
-    <p class="profile-detail"><span class="detail-label">Belt Rank:</span> <%= userProfile.beltRank %></p>
-    <p class="profile-detail"><span class="detail-label">Email:</span> <%= userProfile.email %></p>
-    <!-- <p class="profile-detail"><span class="detail-label">Avatar:</span> <img src="<%= userProfile.avatar %>" alt="User Avatar"></p> -->
+  <h1 class="profile-name"><%= userProfile.name %></h1>
+  <div class="profile-details">
+    <p class="profile-detail"><span class="detail-label">Age:</span> <span class="age-text"><%= userProfile.age %></span></p>
+    <p class="profile-detail"><span class="detail-label">Belt Rank:</span> <span class="belt-rank-text"><%= userProfile.beltRank %></span></p>
   </div>
+</div>
 
-  <div class="profile-sessions">
-    <p class="profile-heading">Training Sessions:</p>
-    <table class="session-table">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% trainingSessions.forEach(function(session) { %>
-        <tr>
-          <td><%= session.date %></td>
-          <td>
-            <a href="/profiles/<%= userProfile._id %>/sessions/<%= session._id %>">View Details</a>
-          </td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-  </div>
+
+
+
+<span class="training-sessions-label">Training Sessions</span>
+<div class="profile-sessions">
+  <table class="session-table">
+    <thead>
+      <tr>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% trainingSessions.forEach(function(session) { %>
+      <tr>
+        <td><%= session.date %></td>
+        <td>
+          <a href="#" class="view-session-button" data-session-id="<%= session._id %>">View Details</a>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
 
   <div class="profile-techniques">
     <p class="profile-heading">Techniques:</p>
@@ -60,4 +62,47 @@
   </div>
 </div>
 
+<!-- Modal container (hidden by default) -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <!-- Content of the training session details -->
+    <h2>Training Session Details</h2>
+    <p><strong>Date:</strong> <span id="sessionDate"></span></p>
+    <!-- Add other session details here -->
+  </div>
+</div>
+
 <%- include('../partials/footer') %>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('myModal');
+  const closeModal = document.getElementById('closeModal');
+  const viewSessionButtons = document.querySelectorAll('.view-session-button');
+  const sessionDate = document.getElementById('sessionDate');
+
+  // Function to open the modal
+  function openModal(sessionId, date) {
+    sessionDate.textContent = date;
+    modal.style.display = 'block';
+  }
+
+  // Function to close the modal
+  function closeModalFunction() {
+    modal.style.display = 'none';
+  }
+
+  // Event listener to open the modal when a button is clicked
+  viewSessionButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const sessionId = button.getAttribute('data-session-id');
+      const sessionDate = button.getAttribute('data-session-date');
+      openModal(sessionId, sessionDate);
+    });
+  });
+
+  // Event listener to close the modal when the close button is clicked
+  closeModal.addEventListener('click', closeModalFunction);
+});
+</script>
