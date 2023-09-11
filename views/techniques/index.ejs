@@ -1,38 +1,38 @@
 <%- include('../partials/header') %>
 
-<h1>All Techniques</h1>
+<div class="tech-page">
+  <h1 class="page-title">All Techniques</h1>
 
-<form action="/techniques" method="get">
-  <label for="isSubmission">Filter by Submission:</label>
-  <select name="isSubmission" id="isSubmission">
-    <option value="">All Techniques</option>
-    <option value="true" <% if (selectedIsSubmission === 'true') { %>selected<% } %>>Submission</option>
-    <option value="false" <% if (selectedIsSubmission === 'false') { %>selected<% } %>>Non-Submission</option>
-  </select>
+  <form action="/techniques" method="get" class="filter-form">
+    <label for="isSubmission" class="filter-label">Filter by Submission:</label>
+    <select name="isSubmission" id="isSubmission" class="filter-select">
+      <option value="">All Techniques</option>
+      <option value="true" <% if (selectedIsSubmission === 'true') { %>selected<% } %> class="filter-option">Submission</option>
+      <option value="false" <% if (selectedIsSubmission === 'false') { %>selected<% } %> class="filter-option">Non-Submission</option>
+    </select>
 
-  <button type="submit">Apply Filters</button>
-  <a href="/techniques">Reset</a> 
-</form>
+    <button type="submit" class="filter-button">Apply Filters</button>
+    <a href="/techniques" class="reset-link">Reset</a> 
+  </form>
 
-
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Is Submission</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% techniques.forEach(function(technique) { %>
+  <table class="techniques-table">
+    <thead>
       <tr>
-        <td><%= technique.name %></td>
-        <td><%= technique.position %></td>
-        <td><%= technique.isSubmission %></td>
-        <td><%= technique.description %></td>
+        <th class="table-header">Name</th>
+        <th class="table-header">Position</th>
+        <th class="table-header">Is Submission</th>
+        <th class="table-header">Description</th>
       </tr>
-    <% }); %>
-    
+    </thead>
+    <tbody>
+      <% techniques.forEach(function(technique) { %>
+        <tr class="technique-row">
+          <td class="table-data"><%= technique.name %></td>
+          <td class="table-data"><%= technique.position %></td>
+          <td class="table-data"><%= technique.isSubmission %></td>
+          <td class="table-data"><%= technique.description %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>

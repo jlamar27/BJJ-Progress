@@ -10,7 +10,7 @@ router.get('/', techniquesCtrl.listTechniques);
 // // Route to display an individual technique
 // router.get('/:techniqueId', techniquesCtrl.viewTechnique);
 
-// Route to add a new technique
+// Route to render a new technique page
 router.get('/new', ensureLoggedIn, techniquesCtrl.createTechnique)
 
 // // Route to edit an existing technique
