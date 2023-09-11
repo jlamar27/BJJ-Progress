@@ -27,7 +27,7 @@ The BJJ (Brazilian Jiu-Jitsu) App is a web application designed to assist BJJ pr
 [Trello planning](https://trello.com/b/0ax17wmc/project-2) 
 
 
-[Checkout the app](https://git.heroku.com/bjj-tracker-app.git)
+[Checkout the app](https://bjj-tracker-app-6e1f8d3babf9.herokuapp.com/)
 
 
 ## Next Steps:
