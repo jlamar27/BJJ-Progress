@@ -1,67 +1,39 @@
 <%- include('../partials/header') %>
 
-<div class="user-profile">
-  <h1 class="profile-name"><%= userProfile.name %></h1>
-  <div class="profile-details">
-    <p class="profile-detail"><span class="detail-label">Age:</span> <span class="age-text"><%= userProfile.age %></span></p>
-    <p class="profile-detail"><span class="detail-label">Belt Rank:</span> <span class="belt-rank-text"><%= userProfile.beltRank %></span></p>
+<div class="main-content">
+  <div class="user-profile">
+    <h1 class="profile-name"><%= userProfile.name %></h1>
+    <div class="profile-details">
+      <p class="profile-detail"><span class="detail-label">Age:</span> <span class="age-text"><%= userProfile.age %></span></p>
+      <p class="profile-detail"><span class="detail-label">Belt Rank:</span> <span class="belt-rank-text"><%= userProfile.beltRank %></span></p>
+    </div>
   </div>
-</div>
 
-
-
-
-<span class="training-sessions-label">Training Sessions</span>
-<div class="profile-sessions">
-  <table class="session-table">
-    <thead>
-      <tr>
-      </tr>
-      <tr>
-        <th>Date</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="training-sessions">
+    <h2 class="training-sessions-label">Training Sessions</h2>
+    <ul class="session-list">
       <% trainingSessions.forEach(function(session) { %>
-      <tr>
-        <td><%= session.date %></td>
-        <td>
-          <a href="#" class="view-session-button" data-session-id="<%= session._id %>">View Details</a>
-        </td>
-      </tr>
+        <li class="session-item">
+          <span class="session-date"><%= session.date %></span>
+          <a href="/profiles/<%= userProfile._id %>/sessions/<%= session._id %>" class="view-session-button" data-session-id="<%= session._id %>">View Details</a>
+        </li>
       <% }); %>
-    </tbody>
-  </table>
-</div>
+    </ul>
+  </div>
 
-
-<span class="user-techniques-label">Techniques</span>
-  <div class="profile-techniques">
-    <table class="technique-table">
-      <thead>
-        <tr>
-          <th>Technique Name</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% userProfile.techniques.forEach(function(technique) { %>
-        <tr>
-          <td><%= technique.name %></td>
-          <td><a href="/profiles/<%= userProfile._id %>/removeTech/<%= technique._id %>" class="remove-link">Remove</a></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
+  <div class="user-techniques">
+    <h2 class="user-techniques-label">Techniques</h2>
+    <ul class="technique-list">
+      <% userProfile.techniques.forEach(function(technique) { %>
+        <li class="technique-item"><%= technique.name %> <a href="/profiles/<%= userProfile._id %>/removeTech/<%= technique._id %>" class="remove-link">Remove</a></li>
+      <% }); %>
+    </ul>
   </div>
 
   <div class="profile-actions">
     <a href="/profiles/<%= userProfile._id %>/trainingSession" class="training-session-button">Create Training Session</a>
     <a href="<%= userProfile._id %>/addTech" class="add-tech-button">Add Techniques</a>
   </div>
-
-
+</div>
 
 <%- include('../partials/footer') %>
-

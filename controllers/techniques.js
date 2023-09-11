@@ -32,11 +32,11 @@ async function listTechniques(req, res) {
 
 async function handleTechniqueCreation(req, res) {
   try {
-    // Extract technique data from the request body
+    
     const { name, position, isSubmission, description } = req.body;
 
 
-    // Create a new technique using the Technique model
+    
     const technique = await Technique.create({
       name,
       position,
@@ -44,10 +44,10 @@ async function handleTechniqueCreation(req, res) {
       description,
     });
 
-    // Redirect to a page or route where you want to display all techniques
+    
     res.redirect("techniques");
   } catch (error) {
-    // Handle errors, e.g., log the error and send an error response
+    
     console.error(error);
     res.status(500).send("Internal Server Error");
   }

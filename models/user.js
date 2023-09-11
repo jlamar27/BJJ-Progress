@@ -20,11 +20,11 @@ const userSchema = new Schema({
   avatar: String,
   techniques: [{
     type: Schema.Types.ObjectId,
-    ref: 'Technique', // Reference the BjjTechnique model
+    ref: 'Technique', 
   }],
   trainingSessions: [{
     type: Schema.Types.ObjectId,
-    ref: 'TrainingSession', // Reference the TrainingSession model
+    ref: 'TrainingSession', 
   }],
 }, {
   timestamps: true,

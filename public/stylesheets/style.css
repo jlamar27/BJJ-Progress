@@ -1,47 +1,52 @@
-/* Reset some default browser styles */
-body, h1, p, ul, li {
+body,
+h1,
+p,
+ul,
+li {
   margin: 0;
   padding: 0;
-  background-color: #1c1c1c; 
+  background-color: #1c1c1c;
   color: #fff;
-  font-family: Arial, sans-serif; /* Smoother font */
+  font-family: Arial, sans-serif;
 }
 
-/* Apply styles to the navbar */
 nav {
-  background-color: black; /* Set the background color to black */
-  color: #fff; /* Text color for links */
-  padding: 10px 0; /* Add padding to the top and bottom of the navbar */
-  position: fixed; /* Fix the navigation bar to the top */
+  background-color: black;
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
   top: 0;
-  width: 100%; /* Set the width to 100% to cover the entire width of the viewport */
-  z-index: 100; /* Ensure it's on top of other elements */
+  width: 100%;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
 }
 
 .main-content {
-  margin-top: 60px; /* Adjust the margin as needed to create space below the navbar */
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #1c1c1c;
+  color: #fff;
 }
 
 nav h1 {
-  margin: 0; /* Remove default margin */
-  padding-left: 20px; /* Add padding to the left of the title */
-  font-size: 24px; /* Adjust the font size of the title */
-    background-color: black; /* Set the background color to black */
+  margin: 0;
+  padding-left: 20px;
+  font-size: 24px;
+  background-color: black;
 }
 
 nav ul {
-  list-style: none; /* Remove bullet points from the list */
-  padding: 0; /* Remove default padding */
-  display: flex; /* Arrange list items horizontally */
-  background-color: black; /* Set the background color to black */
-
+  list-style: none;
+  padding: 0;
+  display: flex;
+  background-color: black;
+  margin-right: 10px;
 }
 
 nav li {
-  margin-left: 20px; /* Add space between list items */
-  background-color: black; /* Set the background color to black */
+  margin-left: 20px;
+  background-color: black;
 }
 
 nav ul :hover {
@@ -50,8 +55,8 @@ nav ul :hover {
 }
 
 nav a {
-  text-decoration: none; /* Remove underlines from links */
-  color: #fff; /* Text color for links */
+  text-decoration: none;
+  color: #fff;
 }
 
 .login {
@@ -61,62 +66,59 @@ nav a {
 }
 
 .login img {
-  height: 20px; /* Adjust the height of the login icon */
-  margin-left: 5px; /* Add space between text and icon */
+  height: 20px;
+  margin-left: 5px;
 }
 
-/* Apply styles to the logo */
 .landing-title {
-  color: #fff; /* Text color for the title */
-  font-size: 2.5rem; /* Adjust the font size */
-  margin-bottom: 10px; /* Add some space between the title and description */
-align-items: center;}
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  align-items: center;
+}
 
 .landing-description {
-  color: #fff; /* Text color for the description */
-  font-size: 1.5rem; /* Adjust the font size */
-  margin-bottom: 20px; /* Add some space between the description and button */
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-/* Style the "Create Your Profile" button */
 .landing-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #00B7FF; /* Button background color */
-  color: #fff; /* Button text color */
+  background-color: #00b7ff;
+  color: #fff;
   text-decoration: none;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Add a smooth hover effect */
-  font-size: 1.2rem; /* Adjust the font size */
+  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
 }
 
 .landing-btn:hover {
-  background-color: #0097E0; /* Change color on hover */
+  background-color: #0097e0;
 }
 
-
 .content-heading {
-  background-color: rgba(231,234,255,.1); /* Text color for headings */
-  font-size: 2rem; /* Adjust the font size */
-  margin-top: 20px; /* Add space above headings */
+  background-color: rgba(231, 234, 255, 0.1);
+  font-size: 2rem;
+  margin-top: 20px;
 }
 
 .content-paragraph {
-  color: #f4f6fb; /* Text color for paragraphs */
-  font-size: 1.2rem; /* Adjust the font size */
-  margin-bottom: 20px; /* Add space below paragraphs */
+  color: #f4f6fb;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .content-subheading {
-  background-color: rgba(231,234,255,.1); /* Text color for subheadings */
-  font-size: 1.8rem; /* Adjust the font size */
-  margin-top: 30px; /* Add space above subheadings */
-  margin-bottom: 10px; /* Add space below subheadings */
+  background-color: rgba(231, 234, 255, 0.1);
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
-/* Add CSS styles for the technique table */
 .technique-table {
   width: 100%;
   border-collapse: collapse;
@@ -136,15 +138,191 @@ align-items: center;}
   color: #333;
 }
 
-/* Style for the technique table row on hover */
 .technique-table tr:hover {
-  background-color: #333; /* Change the background color on hover */
+  background-color: #333;
 }
 
-/* Style for the "Remove" link inside the technique table row */
 .remove-link:hover {
-  color: white; /* Change the text color on hover */
+  color: white;
 }
+
+.remove-link {
+  color: #e74c3c;
+  text-decoration: none;
+}
+
+.remove-link:hover {
+  text-decoration: underline;
+}
+
+.training-sessions-label {
+  padding-top: 16px;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  text-align: center;
+}
+
+
+.training-sessions-label,
+.user-techniques-label {
+  padding: 16px 0;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.training-session-button,
+.add-tech-button {
+  background-color: #00b7ff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.session-list,
+.technique-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.session-item,
+.technique-item {
+  margin-bottom: 10px;
+}
+
+.session-date {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.view-session-button,
+.remove-link {
+  background-color: #00B7FF;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.view-session-button:hover,
+.remove-link:hover {
+  background-color: #0097E0;
+}
+
+
+
+body, h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+  background-color: #1c1c1c; 
+  color: #fff;
+  font-family: Arial, sans-serif; }
+
+nav {
+  background-color: black;   color: #fff;   padding: 10px 0;   position: fixed;   top: 0;
+  width: 100%;   z-index: 100;   display: flex;
+  justify-content: space-between;
+}
+
+.main-content {
+  margin-top: 60px; }
+
+nav h1 {
+  margin: 0;   padding-left: 20px;   font-size: 24px;     background-color: black; }
+
+nav ul {
+  list-style: none;   padding: 0;   display: flex;   background-color: black; 
+}
+
+nav li {
+  margin-left: 20px;   background-color: black; }
+
+nav ul :hover {
+  background-color: #ddd;
+  color: black;
+}
+
+nav a {
+  text-decoration: none;   color: #fff; }
+
+.login {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.login img {
+  height: 20px;   margin-left: 5px; }
+
+.landing-title {
+  color: #fff;   font-size: 2.5rem;   margin-bottom: 10px; align-items: center;}
+
+.landing-description {
+  color: #fff;   font-size: 1.5rem;   margin-bottom: 20px; }
+
+.landing-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00B7FF;   color: #fff;   text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;   font-size: 1.2rem; }
+
+.landing-btn:hover {
+  background-color: #0097E0; }
+
+
+.content-heading {
+  background-color: rgba(231,234,255,.1);   font-size: 2rem;   margin-top: 20px; }
+
+.content-paragraph {
+  color: #f4f6fb;   font-size: 1.2rem;   margin-bottom: 20px; }
+
+.content-subheading {
+  background-color: rgba(231,234,255,.1);   font-size: 1.8rem;   margin-top: 30px;   margin-bottom: 10px; }
+
+.technique-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.technique-table th,
+.technique-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.technique-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+.technique-table tr:hover {
+  background-color: #333; }
+
+.remove-link:hover {
+  color: white; }
 
 
 .remove-link {
@@ -162,32 +340,24 @@ align-items: center;}
   font-weight: bold;
   color: #333;
   display: block;
-  text-align: center; /* Center the text horizontally */
-}
+  text-align: center; }
 
-/* Apply styles to the "Create Training Session" and "Add Techniques" buttons */
 .training-session-button,
 .add-tech-button {
-  background-color: #00B7FF; /* Blue background for buttons */
-  color: #fff; /* Text color for buttons */
-  text-decoration: none;
+  background-color: #00B7FF;   color: #fff;   text-decoration: none;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 1.2rem; /* Adjust the font size */
-  display: inline-block;
-  margin-top: 10px; /* Add margin to separate from tables */
-}
+  font-size: 1.2rem;   display: inline-block;
+  margin-top: 10px; }
 
 .training-session-button:hover,
 .add-tech-button:hover {
-  background-color: #0097E0; /* Darker blue on hover for buttons */
-}
+  background-color: #0097E0; }
 
 
-/* Apply styles to the training session table */
 .session-table {
   width: 100%;
   border-collapse: collapse;
@@ -215,70 +385,49 @@ align-items: center;}
   text-decoration: underline;
 }
 
-/* Style for the training session table row */
 .session-table tr:hover {
-  background-color: #333; /* Change the background color on hover */
-}
+  background-color: #333; }
 
 .view-session-button {
-  color: white; /* White text color */
-  background-color: #f2f2f2; /* Blue background color */
-  text-decoration: none;
-  padding: 5px 10px; /* Add padding to the button */
-  border-radius: 5px; /* Add rounded corners */
-  display: inline-block;
-  transition: background-color 0.3s ease; /* Add a smooth hover effect */
-}
+  color: white;   background-color: #f2f2f2;   text-decoration: none;
+  padding: 5px 10px;   border-radius: 5px;   display: inline-block;
+  transition: background-color 0.3s ease; }
 
 
 
-/* Style for the "View Details" link inside the row */
 .view-session-button:hover {
-  color: #00B7FF; /* Change the text color on hover */
-}
+  color: #00B7FF; }
 
 
 .user-profile {
   text-align: center;
-  font-family: Arial, sans-serif; /* Smoother font */
-  color: #333; /* Text color for the profile */
-  margin-bottom: 50px;
+  font-family: Arial, sans-serif;   color: #333;   margin-bottom: 50px;
 }
 
 .profile-name {
-  font-size: 30px; /* Adjust the font size as needed */
-  margin-bottom: 10px; /* Add spacing between name and details */
-}
+  font-size: 30px;   margin-bottom: 10px; }
 
 .profile-details {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  margin-top: 10px; /* Add space between name and details */
-}
+  margin-top: 10px; }
 
 .detail-label {
-  font-size: 14px; /* Smaller font size for labels */
-  color: rgba(231, 234, 255, 0.5); /* Faded color for labels */
-  text-transform: uppercase;
+  font-size: 14px;   color: rgba(231, 234, 255, 0.5);   text-transform: uppercase;
 }
 
 .profile-detail {
-  font-size: 18px; /* Adjust the font size as needed */
-  margin: 0 12px; /* Add spacing between details */
-}
+  font-size: 18px;   margin: 0 12px; }
 
 .age-text,
 .belt-rank-text {
-  font-size: 14px; /* Smaller font size for age and belt rank */
-  opacity: 0.7; /* Faded color for age and belt rank */
-}
+  font-size: 14px;   opacity: 0.7; }
 
 .profile-sessions {
   margin-top: -10px;
-  /* margin-bottom: 20px; */
-}
+  }
  
 .user-techniques-label {
   padding-top: 16px;
@@ -293,51 +442,72 @@ align-items: center;}
   margin-top: -10px; 
 }
 
+.tech-page {
+  padding: 20px;
+  background-color: #1c1c1c;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+
 .tech-page .page-title {
   font-size: 24px;
   color: white;
   text-align: center;
-}
-
-.tech-page .filter-form {
-  /* Your styles here */
   margin-bottom: 20px;
 }
 
-/* Apply styles to form labels */
+.tech-page .filter-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .tech-page .filter-label {
-  /* Your styles here */
   font-weight: bold;
+  color: #00B7FF;
+  margin-right: 10px;
 }
 
-/* Apply styles to form select elements */
 .tech-page .filter-select {
-  /* Your styles here */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
   width: 13%;
+  margin-right: 5px;
 }
 
 
-/* Apply styles to form buttons */
 .tech-page .filter-button {
-  /* Your styles here */
-  background-color: #007bff;
+  background-color: #00B7FF;
   color: #fff;
   border: none;
-  padding: 10px 15px;
+  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
-}
-
-/* Apply styles to reset link */
-.tech-page .reset-link {
-  /* Your styles here */
-  color: #007bff;
-  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
   margin-left: 10px;
 }
 
-/* Apply styles to the table */
+
+
+.tech-page .reset-link {
+  color: #00B7FF;
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.tech-page .reset-link :hover {
+  text-decoration: underline
+}
+
+
+
 .tech-page .techniques-table {
-  /* Your styles here */
   border-collapse: collapse;
   width: 100%;
 }
@@ -346,18 +516,15 @@ align-items: center;}
   color: #000;
 }
 
-/* Apply styles to table headers */
 .tech-page .table-header {
-  /* Your styles here */
+  background-color: #333;
   font-weight: bold;
-  background-color: #f0f0f0;
+  padding: 10px;
 }
 
 .tech-page .table-data {
-  /* Your styles here */
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 
@@ -368,7 +535,6 @@ align-items: center;}
 }
 
 
-/* Styles for the edit profile form */
 .edit-profile-container {
   text-align: center;
   margin-top: 20px;
@@ -423,4 +589,396 @@ align-items: center;}
 
 .form-button:hover {
   background-color: #0097E0;
+}
+
+.main-content {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.user-profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.detail-label {
+  font-size: 14px;
+  color: rgba(231, 234, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.profile-detail {
+  font-size: 18px;
+  margin: 0 12px;
+}
+
+.age-text,
+.belt-rank-text {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.training-sessions-label,
+.user-techniques-label {
+  padding: 16px 0;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.session-list,
+.technique-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.session-item,
+.technique-item {
+  margin-bottom: 10px;
+}
+
+.session-date {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.view-session-button,
+.remove-link {
+  background-color: #00B7FF;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.view-session-button:hover,
+.remove-link:hover {
+  background-color: #0097E0;
+}
+
+.main-content {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.user-profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.detail-label {
+  font-size: 14px;
+  color: rgba(231, 234, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.profile-detail {
+  font-size: 18px;
+  margin: 0 12px;
+}
+
+.age-text,
+.belt-rank-text {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.training-sessions-label,
+.user-techniques-label {
+  padding: 16px 0;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.session-list,
+.technique-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.session-item,
+.technique-item {
+  margin-bottom: 10px;
+}
+
+.session-date {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.view-session-button,
+.remove-link {
+  background-color: #00B7FF;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.view-session-button:hover,
+.remove-link:hover {
+  background-color: #0097E0;
+}
+
+.training-session-button:hover,
+.add-tech-button:hover {
+  background-color: #0097e0;
+}
+
+.session-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.session-table th,
+.session-table td {
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.session-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+.session-table td a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.session-table td a:hover {
+  text-decoration: underline;
+}
+
+.session-table tr:hover {
+  background-color: #333;
+}
+
+.view-session-button {
+  color: white;
+  background-color: #1c1c1c;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px, solid, white,
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.view-session-button:hover {
+  color: #00b7ff;
+}
+
+.user-profile {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.profile-name {
+  font-size: 30px;
+  margin-bottom: 10px
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.detail-label {
+  font-size: 14px;
+  color: rgba(231, 234, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.profile-detail {
+  font-size: 18px;
+  margin: 0 12px;
+}
+
+.age-text,
+.belt-rank-text {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.profile-sessions {
+  margin-top: -10px;
+}
+
+.user-techniques-label {
+  padding-top: 16px;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  text-align: center;
+}
+
+.profile-techniques {
+  margin-top: -10px;
+}
+
+.tech-page .page-title {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+.tech-page .filter-form {
+  margin-bottom: 20px;
+}
+
+.tech-page .filter-label {
+  font-weight: bold;
+}
+
+.tech-page .filter-select {
+  width: 13%;
+}
+
+.tech-page .filter-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.tech-page .reset-link {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.tech-page .techniques-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tech-page .techniques-table thead {
+  color: #000;
+}
+
+.tech-page .table-header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.tech-page .table-data {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tech-page .technique-row:hover {
+  background-color: #f5f5f5;
+  /border: 2px solid #333;
+  color: #1c1c1c;
+}
+
+.edit-profile-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.edit-profile-heading {
+  font-size: 2rem;
+}
+
+.edit-profile-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.form-select {
+  appearance: none;
+}
+
+.form-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00b7ff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.form-button:hover {
+  background-color: #0097e0;
 }

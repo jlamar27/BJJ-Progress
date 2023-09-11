@@ -1,30 +1,39 @@
 <%- include('../partials/header') %>
 
-<h1>Create Training Session</h1>
+<div class="user-profile">
+  <h1 class="profile-name"><%= userProfile.name %>'s Training Sessions</h1>
+  <div class="profile-details">
+    <!-- You can display user details here if needed -->
+  </div>
+</div>
 
-<form action="/profiles/<%= userProfile._id %>/createTrainingSession" method="POST">
-  <div>
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required>
+<h1 class="content-heading">Create Training Session</h1>
+
+<form class="edit-profile-form" action="/profiles/<%= userProfile._id %>/createTrainingSession" method="POST">
+  <div class="form-group">
+    <label class="form-label" for="date">Date:</label>
+    <input class="form-input" type="date" id="date" name="date" required>
   </div>
 
-  <div>
-    <label for="techniquesUsed">Techniques Used:</label>
-    <select id="techniquesUsed" name="techniquesUsed" multiple>
+  <div class="form-group">
+    <label class="form-label" for="techniquesUsed">Techniques Used:</label>
+    <select class="form-select" id="techniquesUsed" name="techniquesUsed" multiple>
       <% userProfile.techniques.forEach(function(technique) { %>
         <option value="<%= technique._id %>"><%= technique.name %></option>
       <% }); %>
     </select>
   </div>
-  <div>
-    <label for="journal">Journal:</label>
-    <textarea id="journal" name="journal" rows="4" cols="50"></textarea>
+
+  <div class="form-group">
+    <label class="form-label" for="journal">Journal:</label>
+    <textarea class="form-input" id="journal" name="journal" rows="4" cols="50"></textarea>
   </div>
-  <div>
-    <button type="submit">Create Training Session</button>
+
+  <div class="form-group">
+    <button class="form-button" type="submit">Create Training Session</button>
   </div>
 </form>
 
-<a href="/profiles/<%= userProfile._id %>">Back to Profile</a>
+<a href="/profiles/<%= userProfile._id %>" class="form-button">Back to Profile</a>
 
 <%- include('../partials/footer') %>

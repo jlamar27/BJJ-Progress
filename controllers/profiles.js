@@ -16,7 +16,7 @@ module.exports = {
     removeUserTechnique,
     renderTrainingSessionPage,
     createTrainingSession,
-    displayTrainingSession,
+    renderUserTrainingSessionsPage,
 }
 
 async function  renderEditProfilePage (req, res){
@@ -39,34 +39,34 @@ async function  renderEditProfilePage (req, res){
 
 async function editProfile(req, res) {
     try {
-        // Extract user profile data from the request body
+        
         const { name, age, beltRank, email, avatar } = req.body;
 
-        // Assuming you have the Google ID in the session or from authentication
-        const googleId = req.user.googleId; // Replace 'req.user.googleId' with the actual location of the Google ID in your session or authentication data
+        
+        const googleId = req.user.googleId; 
 
-        // Find the existing user profile by Google ID
+        
         const userProfile = await User.findOne({ googleId });
 
         if (!userProfile) {
-            // Handle the case where the user profile doesn't exist
+            
             return res.status(404).send('User Profile not found');
         }
 
-        // Update the user profile with the new data
+        
         userProfile.name = name;
         userProfile.age = age;
         userProfile.beltRank = beltRank;
         userProfile.email = email;
         userProfile.avatar = avatar;
 
-        // Save the updated user profile to the database
+        
         await userProfile.save();
 
-        // Redirect to the updated profile's page or any other appropriate action
+        
         res.redirect(`/profiles/${userProfile._id}`);
     } catch (error) {
-        // Handle errors, e.g., log the error and send an error response
+        
         console.error(error);
         res.status(500).send('Internal Server Error');
     }
@@ -77,7 +77,7 @@ async function editProfile(req, res) {
 
 async function displayProfile(req, res) {
     try {
-        // Get the user ID from the route parameter
+        
         const userId = req.params.userId;
         const userProfile = await User.findById(userId).populate("techniques");
        
@@ -129,7 +129,7 @@ async function addTechniques(req, res) {
         return res.status(404).send('User Profile not found');
         }
 
-    // Assuming selectedTechniques is an array of objects, you can push them all at once
+    
     userProfile.techniques.push(selectedTechniques);
 
     await userProfile.save();
@@ -216,29 +216,25 @@ async function createTrainingSession(req, res) {
 }
 
 
-async function displayTrainingSession (req,res) {
-    try{
-        const userId = req.params.userId
-        const sessionId = req.params.sessionId
+async function renderUserTrainingSessionsPage(req, res) {
+    try {
+        const userId = req.params.userId;
 
-        const userProfile = await User.findById(userId)
-        if(!userProfile){
-            return res.status(404).send('User Profile no5 found')
+        
+        const userProfile = await User.findById(userId);
+        if (!userProfile) {
+            return res.status(404).send('User Profile not found');
         }
 
-        const trainingSession = await TrainingSession.findById(sessionId)
-        if (!trainingSession){
-            return res.status(404).send('Training Session not found')
-        }
-
-        res.render('profiles/trainingSession', {
-            userProfile, 
-            trainingSession
-        })
-
-
+        
+        const trainingSessions = await TrainingSession.find({ user: userId });
+        console.log('juan', trainingSessions)
+        res.render('profiles/userTrainingSessions', {
+            userProfile,
+            trainingSessions,
+        });
     } catch (error) {
-        console.error(error)
-        res.status(500).send('Internal Server Error')
+        console.error(error);
+        res.status(500).send('Internal Server Error');
     }
 }

@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<div class="user-profile">
+  <h1 class="profile-name"><%= userProfile.name %>'s Training Sessions</h1>
+  <div class="profile-details">
+    <!-- You can display user details here if needed -->
+  </div>
+</div>
+
+<span class="training-sessions-label">Training Sessions</span>
+<div class="profile-sessions">
+  <% if (trainingSessions.length > 0) { %>
+    <% trainingSessions.forEach(function(session) { %>
+      <div class="session-details">
+        <p><strong>Date:</strong> <%= session.date %></p>
+        <p><strong>Journal:</strong> <%= session.journal %></p>
+        <p><strong>Techniques Used:</strong></p>
+        <ul>
+          <% session.techniquesUsed.forEach(function(technique) { %>
+            <li><%= technique %></li>
+          <% }); %>
+        </ul>
+      </div>
+    <% }); %>
+  <% } else { %>
+    <p>No training sessions available.</p>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>
