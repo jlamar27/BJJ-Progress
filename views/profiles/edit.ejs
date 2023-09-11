@@ -1,39 +1,38 @@
-
 <%- include('../partials/header') %>
 
-<h1>Edit User Profile</h1>
-    
-<form action="/profiles" method="POST">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="<%= userProfile.name %>">
-    </div>
-    
-    <div>
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" value="<%= userProfile.age %>">
-    </div>
-    
-    <div>
-        <label for="beltRank">Belt Rank:</label>
-        <select id="beltRank" name="beltRank">
-            <option value="White" <%= userProfile.beltRank === 'White' ? 'selected' : '' %>>White</option>
-            <option value="Blue" <%= userProfile.beltRank === 'Blue' ? 'selected' : '' %>>Blue</option>
-            <option value="Purple" <%= userProfile.beltRank === 'Purple' ? 'selected' : '' %>>Purple</option>
-            <option value="Brown" <%= userProfile.beltRank === 'Brown' ? 'selected' : '' %>>Brown</option>
-            <option value="Black" <%= userProfile.beltRank === 'Black' ? 'selected' : '' %>>Black</option>
-        </select>
-    </div>
-    
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<%= userProfile.email %>">
+<div class="edit-profile-container">
+  <h1 class="edit-profile-heading">Edit User Profile</h1>
+  <form action="/profiles" method="POST" class="edit-profile-form">
+    <div class="form-group">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" id="name" name="name" value="<%= userProfile.name %>" class="form-input">
     </div>
 
-    <div>
-        <button type="submit">Edit Profile</button>
+    <div class="form-group">
+      <label for="age" class="form-label">Age:</label>
+      <input type="number" id="age" name="age" value="<%= userProfile.age %>" class="form-input">
     </div>
-</form>
 
+    <div class="form-group">
+      <label for="beltRank" class="form-label">Belt Rank:</label>
+      <select id="beltRank" name="beltRank" class="form-select">
+        <option value="White" <%= userProfile.beltRank === 'White' ? 'selected' : '' %>>White</option>
+        <option value="Blue" <%= userProfile.beltRank === 'Blue' ? 'selected' : '' %>>Blue</option>
+        <option value="Purple" <%= userProfile.beltRank === 'Purple' ? 'selected' : '' %>>Purple</option>
+        <option value="Brown" <%= userProfile.beltRank === 'Brown' ? 'selected' : '' %>>Brown</option>
+        <option value="Black" <%= userProfile.beltRank === 'Black' ? 'selected' : '' %>>Black</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" id="email" name="email" value="<%= userProfile.email %>" class="form-input">
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="form-button">Edit Profile</button>
+    </div>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

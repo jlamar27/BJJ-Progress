@@ -143,7 +143,7 @@ align-items: center;}
 
 /* Style for the "Remove" link inside the technique table row */
 .remove-link:hover {
-  color: #e74c3c; /* Change the text color on hover */
+  color: white; /* Change the text color on hover */
 }
 
 
@@ -164,6 +164,28 @@ align-items: center;}
   display: block;
   text-align: center; /* Center the text horizontally */
 }
+
+/* Apply styles to the "Create Training Session" and "Add Techniques" buttons */
+.training-session-button,
+.add-tech-button {
+  background-color: #00B7FF; /* Blue background for buttons */
+  color: #fff; /* Text color for buttons */
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.2rem; /* Adjust the font size */
+  display: inline-block;
+  margin-top: 10px; /* Add margin to separate from tables */
+}
+
+.training-session-button:hover,
+.add-tech-button:hover {
+  background-color: #0097E0; /* Darker blue on hover for buttons */
+}
+
 
 /* Apply styles to the training session table */
 .session-table {
@@ -258,8 +280,17 @@ align-items: center;}
   /* margin-bottom: 20px; */
 }
  
+.user-techniques-label {
+  padding-top: 16px;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  text-align: center;
+}
+
 .profile-techniques {
-  margin-top: 50px; 
+  margin-top: -10px; 
 }
 
 .tech-page .page-title {
@@ -334,4 +365,62 @@ align-items: center;}
   background-color: #f5f5f5; /
   border: 2px solid #333;
   color: #1c1c1c
+}
+
+
+/* Styles for the edit profile form */
+.edit-profile-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.edit-profile-heading {
+  font-size: 2rem;
+}
+
+.edit-profile-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.form-select {
+  appearance: none;
+}
+
+.form-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00B7FF;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.form-button:hover {
+  background-color: #0097E0;
 }
